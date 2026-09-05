@@ -1,0 +1,31 @@
+{
+  "experiment_info": {
+    "timestamp": "2026-09-05T16:51:51.833471",
+    "seed": 12345,
+    "sample_size": 500
+  },
+  "baseline": {
+    "total_recovered": 82361.84,
+    "total_at_risk": 6944410.05,
+    "recovery_rate": 0.011860163701018778,
+    "total_attempts": 634,
+    "total_contacts": 0,
+    "total_cost": 634.0,
+    "events_processed": 500
+  },
+  "revenueos": {
+    "total_recovered": 1211586.84,
+    "total_at_risk": 6944410.05,
+    "recovery_rate": 0.17446936907189114,
+    "total_attempts": 841,
+    "total_contacts": 1132,
+    "total_cost": 18995.0,
+    "events_processed": 500
+  },
+  "comparison": {
+    "incremental_recovered": 1129225.0,
+    "incremental_recovery_rate": 0.16260920537087237,
+    "relative_improvement_recovered": 13.710536335759377,
+    "relative_improvement_rate": 13.710536335759377
+  }
+}

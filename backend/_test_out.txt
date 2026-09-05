@@ -1,0 +1,17 @@
+ACTIONS: ['no_action', 'immediate_retry', 'delayed_retry', 'payment_link', 'notification', 'human_escalation']
+Found 2 AT_RISK events
+Warning: Model prediction failed, falling back to heuristic: Specifying the columns using strings is only supported for dataframes.
+Warning: Model prediction failed, falling back to heuristic: Specifying the columns using strings is only supported for dataframes.
+Warning: Model prediction failed, falling back to heuristic: Specifying the columns using strings is only supported for dataframes.
+Warning: Model prediction failed, falling back to heuristic: Specifying the columns using strings is only supported for dataframes.
+Warning: Model prediction failed, falling back to heuristic: Specifying the columns using strings is only supported for dataframes.
+Warning: Model prediction failed, falling back to heuristic: Specifying the columns using strings is only supported for dataframes.
+  event 7a64a728  prob=0.0562  amount=4049.23
+Warning: Model prediction failed, falling back to heuristic: Specifying the columns using strings is only supported for dataframes.
+Warning: Model prediction failed, falling back to heuristic: Specifying the columns using strings is only supported for dataframes.
+Warning: Model prediction failed, falling back to heuristic: Specifying the columns using strings is only supported for dataframes.
+Warning: Model prediction failed, falling back to heuristic: Specifying the columns using strings is only supported for dataframes.
+Warning: Model prediction failed, falling back to heuristic: Specifying the columns using strings is only supported for dataframes.
+Warning: Model prediction failed, falling back to heuristic: Specifying the columns using strings is only supported for dataframes.
+  event 2977c88a  prob=0.0800  amount=23665.04
+TEST PASSED

@@ -1,0 +1,14 @@
+[
+  "amount",
+  "hour_of_day",
+  "day_of_week",
+  "is_weekend",
+  "historical_success_rate",
+  "avg_transaction_value",
+  "avg_ticket_size",
+  "payment_method",
+  "failure_reason",
+  "failure_pattern",
+  "plan",
+  "action"
+]

@@ -1,0 +1,15 @@
+razorpay==1.4.2
+openai==1.51.0
+fastapi==0.115.12
+uvicorn[standard]==0.32.1
+sqlalchemy==2.0.23
+alembic==1.13.1
+psycopg2-binary==2.9.9
+redis==5.0.5
+httpx==0.25.2
+pydantic==2.13.4
+python-dotenv==1.0.1
+pytest==8.2.0
+pytest-asyncio==0.23.6
+xgboost==2.0.3
+shap==0.52.0

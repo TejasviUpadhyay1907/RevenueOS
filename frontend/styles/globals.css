@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── DARK MODE (default) ──────────────────────────────────────────────────── */
+:root,
+[data-theme="dark"] {
+  --c-base:       #080f1a;
+  --c-surface:    #0d1826;
+  --c-elevated:   #152236;
+  --c-line:       #1e2d3d;
+  --c-line2:      #253447;
+  --c-primary:    #f1f5f9;
+  --c-secondary:  #94a3b8;
+  --c-muted:      #475569;
+  --c-faint:      #334155;
+  --c-brand:      #10b981;
+  --c-brand-dim:  #0ea472;
+  --c-brand-bg:   rgba(16, 185, 129, 0.10);
+  --c-hover:      #111d2e;
+  --c-active-bg:  rgba(16, 185, 129, 0.10);
+  --scrollbar-thumb: #1e293b;
+  --scrollbar-hover: #334155;
+}
+
+/* ── LIGHT MODE — Premium Sage Mint ──────────────────────────────────────── */
+[data-theme="light"] {
+  --c-base:       #f5faf7;      /* Sage whisper — not white */
+  --c-surface:    #ffffff;      /* Cards lift above base */
+  --c-elevated:   #ecf7f0;      /* Deeper sage for active states */
+  --c-line:       #d4ede2;      /* Sage-tinted borders */
+  --c-line2:      #b8ddc9;      /* Stronger dividers */
+  --c-primary:    #0f3320;      /* Deep forest — matches brand */
+  --c-secondary:  #2d5d49;      /* Medium sage */
+  --c-muted:      #5a7d6a;      /* Soft sage helper text */
+  --c-faint:      #8fada0;      /* Very muted */
+  --c-brand:      #059669;      /* Deeper brand for light bg contrast */
+  --c-brand-dim:  #047857;
+  --c-brand-bg:   rgba(5, 150, 105, 0.08);
+  --c-hover:      #ecf7f0;
+  --c-active-bg:  rgba(5, 150, 105, 0.08);
+  --scrollbar-thumb: #c5ddd3;
+  --scrollbar-hover: #a8cbb8;
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  body {
+    background-color: var(--c-base);
+    color: var(--c-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 999px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-hover); }
+}
+
+/* ── Smooth theme transition ──────────────────────────────────────────────── */
+*, *::before, *::after {
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color     250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color            180ms ease,
+    box-shadow       200ms ease;
+}
+
+/* Faster for interactive elements */
+button, a, input, select, textarea {
+  transition:
+    background-color 150ms ease,
+    border-color     150ms ease,
+    color            120ms ease,
+    transform        150ms ease,
+    opacity          150ms ease;
+}
+
+/* ── Light mode page overrides ────────────────────────────────────────────── */
+
+/* Cards — add subtle shadow in light mode instead of dark glow */
+[data-theme="light"] .rounded-xl,
+[data-theme="light"] .rounded-lg,
+[data-theme="light"] .rounded-2xl {
+  box-shadow: 0 1px 3px rgba(15, 51, 32, 0.07), 0 1px 2px rgba(15, 51, 32, 0.04);
+}
+
+/* Override hardcoded dark backgrounds for main containers */
+[data-theme="light"] .bg-\[\#080f1a\]  { background-color: var(--c-base) !important; }
+[data-theme="light"] .bg-\[\#0d1826\]  { background-color: var(--c-surface) !important; }
+[data-theme="light"] .bg-\[\#152236\]  { background-color: var(--c-elevated) !important; }
+[data-theme="light"] .bg-\[\#111d2e\]  { background-color: var(--c-elevated) !important; }
+/* bg-[#071a10] = the dark green used for hero boxes — in light mode make it pale mint */
+[data-theme="light"] .bg-\[\#071a10\]  { background-color: #ecf7f0 !important; }
+
+/* Override hardcoded dark borders */
+[data-theme="light"] .border-\[\#1e2d3d\]       { border-color: var(--c-line) !important; }
+[data-theme="light"] .border-\[\#334155\]        { border-color: var(--c-line2) !important; }
+[data-theme="light"] .border-\[\#253447\]        { border-color: var(--c-line2) !important; }
+
+/* Override hardcoded dark text */
+[data-theme="light"] .text-\[\#f1f5f9\]  { color: var(--c-primary) !important; }
+[data-theme="light"] .text-\[\#e2e8f0\]  { color: var(--c-primary) !important; }
+[data-theme="light"] .text-\[\#94a3b8\]  { color: var(--c-secondary) !important; }
+[data-theme="light"] .text-\[\#64748b\]  { color: var(--c-muted) !important; }
+[data-theme="light"] .text-\[\#475569\]  { color: var(--c-muted) !important; }
+[data-theme="light"] .text-\[\#334155\]  { color: var(--c-faint) !important; }
+[data-theme="light"] .text-\[\#1e2d3d\]  { color: var(--c-line2) !important; }
+
+/* Keep green/brand colors — they already work on both themes naturally */
+/* Do NOT override bg-[#10b981] — buttons and accents need their solid green */
+
+/* Table rows hover */
+[data-theme="light"] .hover\:bg-\[\#111d2e\]:hover { background-color: var(--c-elevated) !important; }
+
+/* Table header */
+[data-theme="light"] .bg-\[\#080f1a\] th { color: var(--c-muted); }
+
+/* Input fields */
+[data-theme="light"] input,
+[data-theme="light"] select,
+[data-theme="light"] textarea {
+  background-color: var(--c-surface);
+  border-color: var(--c-line);
+  color: var(--c-primary);
+}
+[data-theme="light"] input:focus,
+[data-theme="light"] select:focus,
+[data-theme="light"] textarea:focus {
+  border-color: var(--c-brand);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.12);
+}
+[data-theme="light"] input::placeholder { color: var(--c-muted); }
+
+/* Sidebar already uses CSS variables via Layout.js inline styles — no override needed */
+
+/* Animate-pulse skeleton in light mode */
+[data-theme="light"] .animate-pulse { background-color: var(--c-elevated) !important; }
+
+/* ── Component classes ────────────────────────────────────────────────────── */
+@layer components {
+  .card {
+    background-color: var(--c-surface);
+    border: 1px solid var(--c-line);
+    border-radius: 12px;
+  }
+  .label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--c-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-white text-sm font-semibold rounded-lg transition-all duration-150 active:scale-95;
+    background-color: var(--c-brand);
+  }
+  .btn-primary:hover { background-color: var(--c-brand-dim); }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-150;
+    background-color: var(--c-surface);
+    color: var(--c-secondary);
+    border: 1px solid var(--c-line);
+  }
+  .btn-secondary:hover {
+    border-color: var(--c-line2);
+    color: var(--c-primary);
+    background-color: var(--c-elevated);
+  }
+  .badge-green  { @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold; background: var(--c-brand-bg); color: var(--c-brand); }
+  .badge-amber  { @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold; background: rgba(245,158,11,0.1); color: #f59e0b; }
+  .badge-red    { @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold; background: rgba(239,68,68,0.1); color: #ef4444; }
+  .badge-blue   { @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold; background: rgba(59,130,246,0.1); color: #3b82f6; }
+  .badge-slate  { @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold; background: var(--c-elevated); color: var(--c-muted); }
+}
