@@ -7,7 +7,7 @@
 <h3 align="center">AI-Powered Revenue Recovery for Razorpay Merchants</h3>
 
 <p align="center">
-  <b>Razorpay AI Buildathon 2025 — Track 03: AI Revenue Recovery</b>
+  <b>Razorpay AI Buildathon 2026 — Track 03: AI Revenue Recovery</b>
 </p>
 
 <p align="center">
