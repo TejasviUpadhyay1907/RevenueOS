@@ -363,7 +363,7 @@ revenueos/
 ## 👤 Author
 
 **Tejas**  
-Built for Razorpay AI Buildathon 2025 — Track 03: AI Revenue Recovery
+Built for Razorpay AI Buildathon 2026 — Track 03: AI Revenue Recovery
 
 ---
 
